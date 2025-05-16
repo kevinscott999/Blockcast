@@ -7,7 +7,7 @@ sudo systemctl start docker
 ```
 
 >To run Docker inside WSL or Ubuntu on Windows, you need Docker Desktop for Windows, which exposes Docker to WSL.
->
+
 > In this Guide, I'll tell you how to Install on Windows using WSL.
 
 ## 1. Install Docker Desktop for Windows (if you haven’t):
@@ -16,24 +16,24 @@ sudo systemctl start docker
 ## Which One Should You Download?
 
 1. You need AMD64 if:
-	•	You are on a regular Windows PC or laptop with an Intel or AMD processor.
-	•	This is the most common setup.
+   • You are on a regular Windows PC or laptop with an Intel or AMD processor.
+   • This is the most common setup.
 
 2. You need ARM64 if:
-	•	You have a Windows device with an ARM processor (like Surface Pro X).
-	•	These are less common and usually labeled as ARM.
+   • You have a Windows device with an ARM processor (like Surface Pro X).
+   • These are less common and usually labeled as ARM.
 
 ⸻
 
 How to Check Your System Type
 
 To confirm your architecture:
-	1.	Press Windows + I to open Settings.
-	2.	Go to System > About.
-	3.	Look for “System type”:
-	•	If it says: x64-based processor → Download AMD64
-	•	If it says: ARM-based processor → Download ARM64
-  • During setup, ensure the “Enable WSL 2 integration” box is checked.
+1. Press Windows + I to open Settings.
+2. Go to System > About.
+3. Look for “System type”:
+   • If it says: x64-based processor → Download AMD64
+   • If it says: ARM-based processor → Download ARM64
+   • During setup, ensure the “Enable WSL and integration” box is checked.
   
 ## 2. Restart WSL terminal (or your Ubuntu window), then check Docker:
 ```
@@ -73,24 +73,26 @@ Replace <service_name> with the name of the service you want to inspect...
 docker compose exec blockcastd blockcastd init
 ```
 This command will output:
-	•	Hardware ID: A unique identifier for your device.
-	•	Challenge Key: A Solana-formatted public key unique to your device.
-	•	Registration URL: A link to register your node. ￼
+• Hardware ID: A unique identifier for your device.
+• Challenge Key: A Solana-formatted public key unique to your device.
+• Registration URL: A link to register your node. ￼
 
 Important: Backup your private key located at ~/.blockcast/certs/gw_challenge.key. Losing this key means you won’t be able to prove ownership of your device..
 
 ## 5. Register Your Node
 
 Register your node using the provided URL:
-	1.	Open the Registration URL from the previous step in your browser.
-	2.	Alternatively, visit the Blockcast web portal: https://app.blockcast.network
-  3.  Navigate to Manage Nodes, and click on Register Node. Enter your Hardware ID and Challenge Key manually.
-	4.	Ensure your browser has location access enabled, as it’s required for registration.
+1.Open the Registration URL from the previous step in your browser.
+
+2.Alternatively, visit the Blockcast web portal: https://app.blockcast.network
+
+3. Navigate to Manage Nodes, and click on Register Node. Enter your Hardware ID and Challenge Key manually.
+4. Ensure your browser has location access enabled, as it’s required for registration.
 
 After registration:
-	•	Your node should appear as Healthy in the node list within a few minutes.
-	•	Clicking on your node will display details like uptime, connectivity, and rewards information.
-	•	Note: Nodes need to be online for 6 hours for the first connectivity test and 24 hours to start earning rewards.
+• Your node should appear as Healthy in the node list within a few minutes.
+• Clicking on your node will display details like uptime, connectivity, and rewards information.
+• Note: Nodes need to be online for 6 hours for the first connectivity test and 24 hours to start earning rewards.
 
  
 ## Lastly, whem your pc goes off, you can Manually Start the BEACON Node After Boot:
