@@ -34,7 +34,14 @@ To confirm your architecture:
    • If it says: x64-based processor → Download AMD64
    • If it says: ARM-based processor → Download ARM64
    • During setup, ensure the “Enable WSL and integration” box is checked.
-  
+
+## When you install Docker Desktop for Windows, it includes Docker and Docker Compose for Windows, but that doesn’t always make it available inside WSL (Ubuntu) automatically..
+
+So yes, you still need to run this:
+```
+sudo apt update
+sudo apt install docker-compose-plugin
+```
 ## 2. Restart WSL terminal (or your Ubuntu window), then check Docker:
 ```
 docker --version
